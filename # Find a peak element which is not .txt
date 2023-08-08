@@ -1,0 +1,16 @@
+# Find a peak element which is not smaller than its neighbours
+
+array=list(map(int,input().split()))
+op=[]
+n=len(array)
+if n==1:
+    print(array[0])
+if array[0]>array[1]:
+    op.append(array[0])
+if array[n-1]>array[n-2]:
+    op.append(array[n-1])
+for i in range(1,n-1):
+    if array[i]>array[i+1] and array[i]>array[i-1]:
+        op.append(array[i])
+print(op)
+
